@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const port = 5500;
-
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 //json middleware to extract json data
 app.use(express.json());
 
