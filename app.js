@@ -46,7 +46,7 @@ app.use("/api/answer", authMiddleware, answerRoute);
 async function start() {
     try {
         const result = await dbConnection.execute("select 'test' ");
-        app.listen(port);
+        app.listen(port, "0.0.0.0");
         console.log(`listening on ${port}`);
         console.log("database connected!");
     } catch (error) {
