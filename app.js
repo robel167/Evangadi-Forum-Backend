@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
-const port = 5500;
+const PORT = process.env.PORT || 3000;
 
 //json middleware to extract json data
 app.use(express.json());
@@ -46,8 +46,8 @@ app.use("/api/answer", authMiddleware, answerRoute);
 async function start() {
     try {
         const result = await dbConnection.execute("select 'test' ");
-        app.listen(port);
-        console.log(`listening on ${port}`);
+        app.listen(PORT);
+        console.log(`listening on ${PORT}`);
         console.log("database connected!");
     } catch (error) {
         console.log(error.message);
