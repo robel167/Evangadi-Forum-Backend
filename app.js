@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 //json middleware to extract json data
 app.use(express.json());
@@ -42,9 +42,6 @@ app.use("/api/answer", authMiddleware, answerRoute);
 //         console.log(`listening on port number ${port} `);
 //     }
 // });
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
 async function start() {
     try {
