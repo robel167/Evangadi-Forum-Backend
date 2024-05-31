@@ -42,7 +42,7 @@ app.use("/api/answer", authMiddleware, answerRoute);
 //         console.log(`listening on port number ${port} `);
 //     }
 // });
-app.listen(port, "0.0.0.0", () => {
+app.listen(port, "127.0.0.1", () => {
     console.log(`Server is running on http://0.0.0.0:${port}`);
 });
 
